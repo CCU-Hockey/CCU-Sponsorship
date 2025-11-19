@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CCU vs Myrtle Beach Fire – Sponsorship Interest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="logo-row">
+          <img src="src/ccu-logo.png" alt="CCU Hockey Logo" class="team-logo" />
+          <div class="vs-text">vs</div>
+          <img
+            src="src/mbfd-logo.png"
+            alt="Myrtle Beach Fire Dept Hockey Logo"
+            class="team-logo"
+          />
+        </div>
+        <h1>Sponsorship & Partnership Interest Form</h1>
+        <p class="subtitle">
+          If you or your business are interested in sponsoring or partnering
+          with the CCU Hockey Team and the Myrtle Beach Fire Department Hockey
+          Team for our upcoming charity hockey game, drop your information
+          below. We’ll reach out with available packages, pricing, and ad space
+          opportunities.
+        </p>
+      </header>
+
+      <main>
+        <form
+          id="interestForm"
+          class="form-card"
+          action="https://formspree.io/f/meonoypv"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName"
+                >First Name<span class="required">*</span></label
+              >
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="field">
+              <label for="lastName"
+                >Last Name<span class="required">*</span></label
+              >
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="field">
+            <label for="phone"
+              >Phone <span class="optional">(optional)</span></label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="###-###-####"
+            />
+          </div>
+
+          <div class="field">
+            <label for="affiliation"
+              >Your role or affiliation<span class="required">*</span></label
+            >
+
+            <select id="affiliation" name="affiliation" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="Business Owner / Manager">
+                Business Owner / Manager
+              </option>
+              <option value="Marketing / Advertising">
+                Marketing / Advertising
+              </option>
+              <option value="CCU Affiliate">CCU Affiliate</option>
+              <option value="Myrtle Beach Fire Affiliate">
+                Myrtle Beach Fire Affiliate
+              </option>
+              <option value="Local Myrtle Beach Resident">
+                Local Myrtle Beach Resident
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Request Sponsorship Info
+          </button>
+          <p id="thankYou" class="thank-you" hidden>
+            Thank you! Your interest in sponsorship opportunities has been
+            recorded. We’ll be in touch soon.
+          </p>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <p>
+          This form collects interest only. Sponsorship details and available ad
+          packages will be emailed after review.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const form = document.getElementById("interestForm");
+      const thankYou = document.getElementById("thankYou");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" },
+          });
+
+          if (response.ok) {
+            form.reset();
+            thankYou.hidden = false;
+          } else {
+            alert("Issue submitting the form. Please try again.");
+          }
+        } catch (err) {
+          alert("Network error. Please try again.");
+          console.error(err);
+        }
+      });
+    </script>
+  </body>
+</html>
