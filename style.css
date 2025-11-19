@@ -122,30 +122,35 @@ select:focus {
 }
 
 /* Button */
-.submit-btn {
+/* Shared Button Style (Submit + PDF Button) */
+.submit-btn,
+.pdf-btn {
   margin-top: 4px;
-  padding: 10px 14px;
+  padding: 12px 20px;
   border-radius: 999px;
   border: none;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg, #0f766e, #0ea5e9);
+  background: linear-gradient(135deg, #006d6d, #009f9f);
   color: #ffffff;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  align-self: flex-start;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  text-decoration: none; /* for the <a> PDF button */
+  transition: opacity 0.2s, transform 0.2s;
 }
 
-.submit-btn:hover {
-  opacity: 0.95;
+.submit-btn:hover,
+.pdf-btn:hover {
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
-.submit-btn:active {
+.submit-btn:active,
+.pdf-btn:active {
   transform: translateY(0);
 }
 

@@ -29,74 +29,81 @@
       </header>
 
       <main>
+        <!-- PDF button/link for package details -->
+        <div class="field" style="margin-bottom: 1.5rem">
+          <a href="src/Sponsorship-Pre-Reg.pdf" target="_blank" class="pdf-btn">
+            View Sponsorship Package Details (PDF)
+          </a>
+        </div>
+
         <form
           id="interestForm"
           class="form-card"
           action="https://formspree.io/f/meonoypv"
           method="POST"
         >
-          <div class="form-row">
-            <div class="field">
-              <label for="firstName"
-                >First Name<span class="required">*</span></label
-              >
-              <input type="text" id="firstName" name="firstName" required />
-            </div>
-            <div class="field">
-              <label for="lastName"
-                >Last Name<span class="required">*</span></label
-              >
-              <input type="text" id="lastName" name="lastName" required />
-            </div>
+          <!-- Company / Entity Name -->
+          <div class="field">
+            <label for="companyName">
+              Company / Entity Name<span class="required">*</span>
+            </label>
+            <input type="text" id="companyName" name="companyName" required />
           </div>
 
+          <!-- Point of Contact Name -->
           <div class="field">
-            <label for="email">Email<span class="required">*</span></label>
-            <input type="email" id="email" name="email" required />
+            <label for="pocName">
+              Point of Contact Name<span class="required">*</span>
+            </label>
+            <input type="text" id="pocName" name="pocName" required />
           </div>
 
+          <!-- Point of Contact Email -->
           <div class="field">
-            <label for="phone"
-              >Phone <span class="optional">(optional)</span></label
-            >
+            <label for="pocEmail">
+              Point of Contact Email<span class="required">*</span>
+            </label>
+            <input type="email" id="pocEmail" name="pocEmail" required />
+          </div>
+
+          <!-- Point of Contact Phone -->
+          <div class="field">
+            <label for="pocPhone">
+              Point of Contact Phone
+              <span class="optional">(optional)</span>
+            </label>
             <input
               type="tel"
-              id="phone"
-              name="phone"
+              id="pocPhone"
+              name="pocPhone"
               placeholder="###-###-####"
             />
           </div>
 
+          <!-- Package of Choice -->
           <div class="field">
-            <label for="affiliation"
-              >Your role or affiliation<span class="required">*</span></label
-            >
-
-            <select id="affiliation" name="affiliation" required>
+            <label for="packageChoice">
+              Package of Choice<span class="required">*</span>
+            </label>
+            <select id="packageChoice" name="packageChoice" required>
               <option value="" disabled selected>Select one</option>
-              <option value="Business Owner / Manager">
-                Business Owner / Manager
+              <option value="Brand Awareness - $250">
+                Brand Awareness - $250
               </option>
-              <option value="Marketing / Advertising">
-                Marketing / Advertising
+              <option value="Strong Supporter - $500">
+                Strong Supporter - $500
               </option>
-              <option value="CCU Affiliate">CCU Affiliate</option>
-              <option value="Myrtle Beach Fire Affiliate">
-                Myrtle Beach Fire Affiliate
-              </option>
-              <option value="Local Myrtle Beach Resident">
-                Local Myrtle Beach Resident
-              </option>
-              <option value="Other">Other</option>
+              <option value="Proud Partner - $750">Proud Partner - $750</option>
             </select>
           </div>
 
           <button type="submit" class="submit-btn">
-            Request Sponsorship Info
+            Submit Sponsorship Interest
           </button>
+
           <p id="thankYou" class="thank-you" hidden>
-            Thank you! Your interest in sponsorship opportunities has been
-            recorded. We’ll be in touch soon.
+            Thank you! Your sponsorship interest has been recorded. We’ll be in
+            touch soon.
           </p>
         </form>
       </main>
